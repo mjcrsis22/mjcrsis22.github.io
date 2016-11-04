@@ -257,30 +257,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       e.preventDefault();
       $.ajax({
         url: 'https://formspree.io/mjcrsis22@gmail.com',
-        //url: 'https://www.google.co.ve/',
         method: 'POST',
         data: $(this).serialize(),
         dataType: 'json',
         beforeSend: function() {
-          var itm = '<div id="jx-alert" class="w3-panel w3-blue-grey" style="display:none;"><p>Enviando informaci&oacute;n...</p></div>';
-          $contactForm.append(itm);
-          $('#jx-alert').slideDown();
+          $('btn-submit').attr('disabled','disabled').removeClass('w3-teal').addClass('w3-blue-grey').html('Enviando mensaje...');
         },
         success: function(data) {
-          $contactForm.find('#jx-alert').slideUp('puff', {}, 500, function() {
-            $(this).remove();
-            var itm = '<div id="jx-alert" class="w3-panel w3-teal" style="display:none;"><p>Informaci&oacute;n enviada con exito.</p></div>';
-            $contactForm.append(itm);
-            $('#jx-alert').slideDown();
-          });
+          $('btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-green').html('Mensaje enviado');
         },
         error: function(err) {
-          $contactForm.find('#jx-alert').slideUp('puff', {}, 500, function() {
-            $(this).remove();
-            var itm = '<div id="jx-alert" class="w3-panel w3-red" style="display:none;"><p>Ops, hubo un error al enviar la informaci&oacute;n.</p></div>';
-            $contactForm.append(itm);
-            $('#jx-alert').slideDown();
-          });
+          $('btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-red').html('Disculpe, mensaje no enviado');
         }
       });
     });
