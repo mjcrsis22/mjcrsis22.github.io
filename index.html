@@ -261,13 +261,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         data: $(this).serialize(),
         dataType: 'json',
         beforeSend: function() {
-          $('btn-submit').attr('disabled','disabled').removeClass('w3-teal').addClass('w3-blue-grey').html('Enviando mensaje...');
+          $('#btn-submit').attr('disabled','disabled').removeClass('w3-teal').addClass('w3-blue-grey').html('Enviando mensaje...');
         },
         success: function(data) {
-          $('btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-green').html('Mensaje enviado');
+          $('#btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-green').html('Mensaje enviado');
         },
         error: function(err) {
-          $('btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-red').html('Disculpe, mensaje no enviado');
+          $('#btn-submit').attr('disabled','disabled').removeClass('w3-blue-grey').addClass('w3-red').html('Disculpe, mensaje no enviado');
         }
       });
     });
