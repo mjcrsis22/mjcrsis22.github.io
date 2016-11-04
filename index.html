@@ -214,9 +214,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <form class="w3-container" method="POST" action="https://formspree.io/mjcrsis22@gmail.com">
           <input type="hidden" name="_subject" value="Un nuevo mensaje desde tu CV · Marcos Colina" />
           <input type="text" name="_gotcha" style="display:none" />
-          <input name="text" placeholder="Nombre" type="text" required="required" class="w3-input">
-          <input name="email" placeholder="Correo Electr&oacute;nico" type="email" required="required" class="w3-input">
-          <textarea name="message" placeholder="Mensaje" required="required" class="w3-input"></textarea>
+
+          <label class="w3-label w3-text-teal"><b>Nombre:</b></label>
+          <input name="Nombre" type="text" required="required" class="w3-input w3-border">
+
+          <label class="w3-label w3-text-teal"><b>Correo Electr&oacute;nico:</b></label>
+          <input name="Correo" type="email" required="required" class="w3-input w3-border">
+
+          <label class="w3-label w3-text-teal"><b>Mensaje:</b></label>
+          <textarea name="Mensaje" required="required" class="w3-input w3-border"></textarea>
           <br>
           <button type="submit" class="w3-btn w3-teal w3-margin-bottom">Enviar</button>
         </form>
